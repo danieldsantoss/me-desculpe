@@ -1,0 +1,196 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: url('WhatsApp\ Image\ 2024-08-05\ at\ 20.03.52.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: white;
+    text-shadow: 1px 1px 2px black;
+    background-color: rgb(255, 255, 255);
+}
+
+.container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 90%;
+    margin: 20px;
+    animation: fadeIn 2s;
+}
+
+.header {
+    position: relative;
+}
+
+.heart {
+    position: absolute;
+    top: -20px;
+    left: calc(50% - 25px);
+    width: 50px;
+}
+
+h1 {
+    color: #ff6f61;
+    margin-bottom: 20px;
+}
+
+.main-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px; /* Espaçamento entre o player e as caixas de mensagem */
+    margin-bottom: 20px;
+}
+
+.message-box {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    padding: 15px;
+    width: 200px;
+    max-width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.message-box p {
+    margin: 0;
+    color: #333;
+}
+
+.message-box button {
+    background-color: #ff6f61;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.message-box button:hover {
+    background-color: #e55b4f;
+}
+
+.response-options {
+    display: none;
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0;
+}
+
+.response-options li {
+    margin: 5px 0;
+}
+
+.response-options a {
+    text-decoration: none;
+    color: #ff6f61;
+    font-weight: bold;
+}
+
+.response-options a:hover {
+    text-decoration: underline;
+}
+
+.player-container {
+    flex: 1;
+    max-width: 600px; /* Largura máxima do player */
+}
+
+iframe {
+    border-radius: 12px;
+    width: 100%;
+    height: 352px;
+}
+
+.footer {
+    margin-top: 30px;
+    font-size: 0.9em;
+    color: #141313;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+#message-box {
+    display: none; /* Esconde a mensagem por padrão */
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(238, 234, 234, 0.8);
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.827);
+    max-width: 80%;
+}
+
+#message-text {
+    margin: 0;
+}
+
+/* Estilo para os corações */
+#hearts {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Não interfere com outros elementos */
+    overflow: hidden; /* Esconde os corações fora da tela */
+    z-index: 9999; /* Garante que os corações fiquem acima de outros conteúdos */
+}
+
+.heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: url('heart.png') no-repeat center center;
+    background-size: cover;
+    animation: float 5s linear infinite;
+    opacity: 0.8; /* Ajusta a visibilidade dos corações */
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(-200px) scale(1.2);
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateY(0) scale(1);
+        opacity: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    .message-box {
+        width: auto;
+    }
+
+    .footer {
+        font-size: 0.8em;
+    }
+}
